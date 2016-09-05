@@ -39,7 +39,7 @@ public class IpBean implements Serializable {
 		while (headerNames.hasMoreElements()) {
 			String name = headerNames.nextElement();
 
-			// System.out.println(name + " : " + request.getHeader(name));
+			System.out.println(name + " : " + request.getHeader(name));
 			headers.add(new Dato(name, request.getHeader(name)));
 		}
 
