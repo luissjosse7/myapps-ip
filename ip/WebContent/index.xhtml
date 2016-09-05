@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+	<f:facet name="first">
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	</f:facet>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta content="private ,no-cache, no-store, must-revalidate" http-equiv="Cache-Control" />
+	<meta content="no-cache" http-equiv="Pragma" />
+
+	<style type="text/css">
+#imagepgframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#wrapframe {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	bottom: 0;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+</style>
+
+	<title>IP</title>
+
+</h:head>
+
+<body style="font-size: 11px;" onload="cargar();">
+
+	<!-- <script type="text/javascript" src="#{request.contextPath}/resources/js/aplication.js"></script> -->
+
+	<script>
+				//window.onload = function(){
+					//document.getElementById("demo").innerHTML = Date();
+					//setTimeout( function ( ) { alert( "moo" ); }, 2000 );
+					function cargar(){
+
+					//PF('statusDialog').show();
+					//setTimeout( function ( ) { PF('statusDialog').hide(); }, 5000 );
+					
+					//setTimeout( function ( ) {  }, 5000 );
+					
+				    //PF('statusDialog').hide();
+					
+// 					window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;   //compatibility for firefox and chrome
+// 				    var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};      
+// 				    pc.createDataChannel("");    //create a bogus data channel
+// 				    pc.createOffer(pc.setLocalDescription.bind(pc), noop);    // create offer and set local description
+// 				    pc.onicecandidate = function(ice){  //listen for candidate events
+// 				        if(!ice || !ice.candidate || !ice.candidate.candidate)  return;
+// 				        var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+// 				        //console.log('my IP: ', myIP);  
+// 				        //document.getElementById("form_cuenta:itIp").value = myIP; 
+// 				        pc.onicecandidate = noop;
+// 				    };
+				};
+		</script>
+	<p id="demo"></p>
+
+
+	<p:dialog modal="true" widgetVar="statusDialog" id="statusDialog" draggable="false" closable="false" resizable="false">
+		<p:graphicImage value="/resources/icons/processing2.gif" onmousedown="return false" />
+	</p:dialog>
+
+	<h:form id="form_cuenta">
+
+		<div align="center">
+
+			<p:dataTable value="#{ipBean.headers}" var="reg" style="align-text: right;" tableStyle="width: 600px;" rendered="true">
+				<p:column headerText="NAME" style="text-align: right; word-wrap: break-word; white-space: normal; width: 200px;">
+					<h:outputText value="#{reg.name}" escape="false" />
+				</p:column>
+
+				<p:column headerText="VALUE" style="text-align: left; word-wrap: break-word; white-space: normal; width: 400px;">
+					<h:outputText value="#{reg.value}" />
+				</p:column>
+			</p:dataTable>
+
+		</div>
+
+		<!-- 		 <iframe src="http://172.29.84.22:8080/calling-circle-admin/deletegroup.html?usuario=maitaj" frameborder="0" style="width: 100%; height: 1000px;"></iframe> -->
+
+		<!-- 		<pe:layout maskPanesEarly="true"> -->
+		<!-- 			<pe:layoutPane position="north" size="85">   -->
+		<!--             North   -->
+		<!--         </pe:layoutPane> -->
+		<!-- 			<pe:layoutPane position="center" maskContents="true"> -->
+		<!-- 				<iframe id="iframeCenter" src="http://172.29.84.22:8080/calling-circle-admin/deletegroup.html?usuario=maitaj" width="100%" height="100%" frameborder="0"> </iframe> -->
+		<!-- 			</pe:layoutPane> -->
+		<!-- 			<pe:layoutPane position="west" size="250" resizeWhileDragging="false" maxSize="500" minSize="100" resizable="true" closable="true">   -->
+		<!--             West   -->
+		<!--         </pe:layoutPane> -->
+		<!-- 		</pe:layout> -->
+
+
+	</h:form>
+
+	<!-- 	<h:form> -->
+	<!-- 		<div id="wrapframe"> -->
+	<!-- 			<iframe id="imagepgframe" name="imagepgframe" frameborder="0" scrolling="auto" src="http://172.29.84.22:8080/calling-circle-admin/deletegroup.html?usuario=maitaj"> -->
+	<!-- 				<p>Your browser does not support iframes.</p> -->
+	<!-- 			</iframe> -->
+	<!-- 		</div> -->
+	<!-- 	</h:form> -->
+
+</body>
+
+</html>
