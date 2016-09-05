@@ -84,4 +84,7 @@ public class IpBean implements Serializable {
 		
 	}
 
+	public void testLuis(){
+		// test luis
+	}
 }
