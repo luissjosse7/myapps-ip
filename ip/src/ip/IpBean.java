@@ -85,7 +85,7 @@ public class IpBean implements Serializable {
 	}
 	
 	public void Zulema(){
-		system.out.println("Modificado por Zulema")
+		System.out.println("Modificado por Zulema"); // corregido
 	}
 
 	public void testLuis(){
