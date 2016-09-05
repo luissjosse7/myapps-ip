@@ -76,7 +76,12 @@ public class IpBean implements Serializable {
 	}
 
 	public void setHeaders(List<Dato> headers) {
+		//devuelve la cabecera
 		this.headers = headers;
+	}
+	
+	public void prueba(){
+		
 	}
 
 }

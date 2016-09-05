@@ -11,7 +11,7 @@ public class Dato implements Serializable {
 
 	private String name;
 	private String value;
-
+	private String tipo;
 	public Dato(String name, String value) {
 		super();
 		this.name = name;
