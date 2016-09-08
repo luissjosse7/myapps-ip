@@ -16,8 +16,6 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
-
-	<!-- Map these files with JSF -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
@@ -34,13 +32,52 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
 		<param-value>bootstrap</param-value>
-<!-- 		<param-value>glass-x</param-value> -->
-<!-- 		<param-value>redmond</param-value> -->
-<!-- 		<param-value>cupertino</param-value> -->
 	</context-param>
 
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>ip.MyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+
+<!-- 	<security-constraint> -->
+<!-- 		<display-name>excluded</display-name> -->
+<!-- 		<web-resource-collection> -->
+<!-- 			<web-resource-name>No Access</web-resource-name> -->
+<!-- 			<url-pattern>/*</url-pattern> -->
+<!-- 			<http-method>DELETE</http-method> -->
+<!-- 			<http-method>PUT</http-method> -->
+<!-- 			<http-method>HEAD</http-method> -->
+<!-- 			<http-method>OPTIONS</http-method> -->
+<!-- 			<http-method>TRACE</http-method> -->
+<!-- 			<http-method>ALLOW</http-method> -->
+<!-- 		</web-resource-collection> -->
+<!-- 		<auth-constraint /> -->
+<!-- 	</security-constraint> -->
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+		<cookie-config>
+			<http-only>true</http-only>
+			<secure>true</secure>
+		</cookie-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+
+	<filter>
+		<filter-name>cors</filter-name>
+		<filter-class>ip.CorsFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>cors</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
