@@ -1,5 +1,5 @@
 function loadXMLDoc() {
-	alert("ingresando a load servlet");
+//	alert("ingresando a load servlet");
 	var xmlhttp;
 //	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 //		xmlhttp = new XMLHttpRequest();
@@ -21,7 +21,7 @@ function loadXMLDoc() {
 			// document.getElementById("form_cuenta:ipServlet").innerText = xmlhttp.responseText;
 			// document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
 		} else {
-			alert("not onready state change: " + xmlhttp.readyState);
+//			alert("not onready state change: " + xmlhttp.readyState);
 		}
 	}
 	

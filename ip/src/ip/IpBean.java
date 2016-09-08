@@ -70,10 +70,10 @@ public class IpBean implements Serializable {
 				scheme = "https";
 			}
 			// ipClient = request.getRemoteAddr();
-			// protocoloIp = scheme + "://" + InetAddress.getLocalHost().getHostAddress();
-			protocoloIp = scheme + "://" + request.getServerName();
-			// String url = scheme + "://" + InetAddress.getLocalHost().getHostAddress() + ":" + request.getLocalPort() + "/ip/MyServlet";
-			String url = scheme + "://" + request.getServerName() + ":" + request.getLocalPort() + "/ip/MyServlet";
+			 protocoloIp = scheme + "://" + InetAddress.getLocalHost().getHostAddress();
+//			protocoloIp = scheme + "://" + request.getServerName();
+			 String url = scheme + "://" + InetAddress.getLocalHost().getHostAddress() + ":" + request.getLocalPort() + "/ip/MyServlet";
+//			String url = scheme + "://" + request.getServerName() + ":" + request.getLocalPort() + "/ip/MyServlet";
 			log.info("url: " + url);
 			headers.add(new Dato("url servlet: ", url));
 			urlServlet = url;
